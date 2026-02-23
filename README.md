@@ -2,7 +2,7 @@
 
 A simple web app to search for movies and save them to a personal watchlist.
 
-Live Demo:
+Live Demo: https://mymoviejourney.netlify.app/
 
 ## Features
 
