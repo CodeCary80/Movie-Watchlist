@@ -16,7 +16,7 @@ searchBtn.addEventListener('click',async()=>{
 
     content.innerHTML = `<p style="padding: 20px">Loading...</p>` 
 
-    const res = await fetch(`https://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`)
+    const res = await fetch(`/.netlify/functions/search?query=${query}`)
     const movies = await res.json()
 
     if (movies.Response === 'False') {
@@ -28,7 +28,7 @@ searchBtn.addEventListener('click',async()=>{
 
     const detailedMovies = await Promise.all(
         ids.map(async(id)=>{
-            const res = await fetch(`https://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`)
+            const res = await fetch(`/.netlify/functions/search?id=${id}`)
             return await res.json()
         })
     )
